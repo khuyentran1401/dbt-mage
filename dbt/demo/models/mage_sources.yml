@@ -1,0 +1,6 @@
+sources:
+- name: mage_demo
+  tables:
+  - name: broken_dew_load_india_data
+  - name: broken_dew_load_us_data
+version: 2
