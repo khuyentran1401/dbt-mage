@@ -1,6 +1,6 @@
 sources:
 - name: mage_demo
   tables:
-  - name: broken_dew_load_india_data
-  - name: broken_dew_load_us_data
+  - name: dbt_pipeline_load_us
+  - name: dbt_pipeline_load_india
 version: 2

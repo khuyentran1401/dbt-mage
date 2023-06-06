@@ -1,4 +1,9 @@
-SELECT us.date, us_diff, india_diff
-FROM {{ ref('get_us_difference') }} AS us
-JOIN {{ ref('get_india_difference') }} AS india 
-ON us.date = india.date
+SELECT 
+    us.Week, 
+    us.ai as us_ai, 
+    us.chatgpt as us_chatgpt, 
+    india.ai as india_ai, 
+    india.chatgpt as india_chatgpt
+FROM {{ source('mage_demo', 'dbt_pipeline_load_us') }} AS us
+JOIN {{ source('mage_demo', 'dbt_pipeline_load_india') }} AS india 
+ON us.Week = india.Week
