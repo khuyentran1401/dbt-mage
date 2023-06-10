@@ -4,7 +4,6 @@ OBJECT_COLUMNS = ["us_chatgpt", "india_chatgpt"]
 @transformer
 def convert_object_columns_to_integers(data, *args, **kwargs):
     """Convert all object columns to integers"""
-    num = choice([0, 1])
     for column in OBJECT_COLUMNS:
         data[column] = data[column].apply(
             lambda x: 0 if x == "<1" else int(x)
